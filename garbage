@@ -1,0 +1,57 @@
+  private void credit(double months, int credit) {
+    	  
+    	 /* ArrayList<String> arr= new ArrayList<>();
+    	  arr.add("January"); arr.add("February"); arr.add("March"); arr.add("April");
+    	  arr.add("May"); arr.add("Jun"); arr.add("July"); arr.add("August");
+    	  arr.add("September"); arr.add("October"); arr.add("November");arr.add("December");
+    	  arr.add("January"); arr.add("February"); arr.add("March"); arr.add("April");
+    	  arr.add("May"); arr.add("Jun"); arr.add("July"); arr.add("August");
+    	  arr.add("September"); arr.add("October"); arr.add("November");arr.add("December");
+    	  double ocker=(months/10)*0.10;
+    	 // int credit=applyForLoan();
+    	  double payment=credit/months;
+    	  double a= credit*ocker;
+    	  TreeMap<String,Integer> hm=new TreeMap<>();
+	      for(int i=0;i<months;i++) {
+	    	  double pay=payment+a/10;
+	    	 hm.put(arr.get(i),(int)pay);
+	    	 if(a>10) {
+	    		 a-=a/10;
+	    	 }else {
+	    		 break;
+	    	 }
+	      }
+	 	  Set<Entry<String,Integer>> creditMonthly=hm.entrySet();
+	 	  for(Entry<String,Integer> w:creditMonthly) {
+	 		  System.out.println(w+ "\n");
+	 	  }*/
+	
+	}
+	
+	 int credit=loan.applyForLoan(); //System.out.println(credit); // (12,24,36,48,60,72,90,120)
+    	  if(credit>=80000) {
+    		 System.out.println("12-120 months instalment optins you have.Please select your choiece for payment (12)");
+    		 double months=scan.nextDouble();
+    		 System.out.println("how much your salary");
+    		 System.out.println("Please enter your salary amount");
+    		 double salary=scan.nextDouble();
+    		 System.out.println( monthlyPay(months, salary));
+    		double pay= monthlyPay(months, salary);
+    		System.out.println(pay);
+    		 
+    		 System.out.println("Dear custumer during"+ (int) months/12 +" years " + months%12 +" months " + " will pay " );
+    		 loan1=(double)credit;
+    	  }else if(credit>30000) {
+    		  System.out.println("12-48 months instalment optins you have.Please select your choiece for payment (12,24,36,48) ");
+     		 double months=scan.nextDouble();
+     		 double payment=credit/months;
+     		
+     		 System.out.println("Dear custumer during "+(int)months/12 + " years "+ months%12 + " months "+ " will pay: " );
+     		 loan1=(double)loan.applyForLoan();
+    	  }else {
+    		  System.out.println("12-24 months instalment optins you have.Please select your choiece for payment (12,24) ");
+      		 double months=scan.nextDouble();
+      		 double payment=credit/months;
+      		 System.out.println("Dear custumer during "+(int)months/12 + " years "+ months%12 + " months "+ " will pay: " );
+      		 loan1=(double)credit;
+    	  }

@@ -1,0 +1,50 @@
+GITHUB PROJE YÜKLEME
+
+1)	BİLGİSAYARDA PROJE KLASÖRLERİNİ AYARLAMA
+	Önce Windows'taki geçerli kullanıcı klasörü altında, tüm projelerin olacağı bir ana klasör oluşturuyoruz. Örn. Java klasörü.
+	Sonra bu ana klasör içinde, Github'a yükleyeceğimiz her proje (repository) için ayrı ayrı klasörler oluşturacağız.
+	Klasörleri Windows'ta da, konsolda da oluşturabiliriz.
+	
+	Konsolda oluşturma:
+	
+	C:\Users\winkullaniciadi>									Konsolu açtığımızda ilk gelen konum
+	mkdir Java													Java adında yeni klasör oluşturur
+	cd Java														Java klasörüne girer
+	C:\Users\winkullaniciadi\Java>								Güncel konum
+	mkdir yeni-java-projesi										yeni-java-projesi adında klasör oluşturur (Repository'nin de aynı adla açılması iyi olur.)
+	cd yeni-java-projesi										yeni-java-projesi klasörüne girer
+	C:\Users\winkullaniciadi\Java\yeni-java-projesi>			Güncel konum
+	
+	Github'a atmak istediğimiz proje dosyalarını bu klasörün içine kaydediyoruz. Bu işlemi Windows'ta yapmak kolaylık olur.
+	Konsola dönüp devam ediyoruz.
+	
+2)	BAĞLANTI AYARLARI
+	C:\Users\winkullaniciadi\Java\yeni-java-projesi>			Güncel konum
+	git init													Proje klasörünü initialize eder
+	git config --global user.name "EceNarin"					Github'a bağlanmak için kullanıcı adı girişi
+	git config --global user.email "la.crymosa321@gmail.com"	Github'a bağlanmak için mail adresi girişi
+	
+
+3)	REPOSITORY OLUŞTURMA
+	Github sitesinden yapılacak. Repository adının, bilgisayaradaki proje klasörü adıyla aynı olması iyi olur.
+	
+4)	PROJE YÜKLEME (STAGING AREA)
+	git status													Zorunlu değil. Gönderilecek dosyaların listesini getiriyor.
+	git add dosyaadi VEYA git add .								Tek bir dosyayı veya . kullanarak klasördeki tüm dosyaları gönderiyoruz.
+	git status													Zorunlu değil. Tekrar yazılarak duruma bakılabilir. Yeşil dosyalar gönderilecek.
+	
+5)	PROJE YÜKLEME (COMMIT STORE)
+	git commit -m "mesaj"										Staging Area'daki dosyalarımızı Commit Store'a gönderiyoruz. Mesaj açıklayıcı olmalı.
+	git log														Zorunlu değil. Commit Store'daki duruma bakıyoruz.
+	
+6)	PROJE YÜKLEME (BRANCH AYARI)
+	Lokalde şu anda çalışmamız master branch'te duruyor. Çünkü lokaldeki default branch'imiz master. Ama Github'da default branch artık main. 
+	Dosyalarımızı main branch'e göndermek istiyoruz. Lokaldeki aktif branch'imizi (HEAD'i) main yapacağız.
+	
+	git branch -M main											Mevcut aktif branch'i (master'i) içindeki her şeyle birlikte main branch yapar.
+	
+7)	PROJE YÜKLEME (GÖNDERME)
+	Github'da projeyi göndereceğimiz repository'nin adresini kopyalıyoruz. Repository sayfasında CODE sekmesinden kopyalanıyor. Komutta yapıştıracağız.
+	
+	git remote add origin url									url yerine adresi yapıştırıyoruz. https://github.com/EceNarin/yeni-java-projesi.git
+	git push -u origin main										main branch'e projeyi gönderiyoruz.
